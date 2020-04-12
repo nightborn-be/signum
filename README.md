@@ -81,8 +81,8 @@ option: {
 
 ```jsx
 import React from 'react'
-import Chat from 'signum'
-import 'signum/dist/index.css';
+import Chat from '@nightborn/signum'
+import '@nightborn/signum/dist/index.css';
 
 const defaultProps = {
     option: {
