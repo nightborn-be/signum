@@ -1,4 +1,4 @@
-# signum
+# Signum
 ![Banner](https://github.com/nightborn-be/signum/blob/master/lab_signum.png)
 
 [![NPM](https://img.shields.io/npm/v/signum.svg)](https://www.npmjs.com/package/signum) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
@@ -81,7 +81,7 @@ const defaultProps = {
 
 const App = () => {
 	return (
-    <Chat {...defaultProps} />
+		<Chat {...defaultProps} />
 	)
 }
 
