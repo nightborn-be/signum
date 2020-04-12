@@ -5,8 +5,8 @@
 
 ## Demo
 
-You can try the communication tool here: https://nightborn-be.github.io/signum
-Or on our website for a production-version: https://nightborn.be
+- You can try the communication tool here: https://nightborn-be.github.io/signum
+- Or on our website for a production-version: https://nightborn.be
 
 ## Install
 
