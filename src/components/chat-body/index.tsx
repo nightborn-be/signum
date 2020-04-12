@@ -30,8 +30,8 @@ export default function ChatBody() {
 
     // Methods
     async function inSequence() {
-        apparitionAnimation.start({ scaleY: 0, opacity: 0, x: 0, transition: { duration: 0 } });
-        apparitionAnimation.start({ opacity: 1, scaleY: 1 });
+        await apparitionAnimation.start({ scaleY: 0, opacity: 0, x: 0, transition: { duration: 0 } });
+        apparitionAnimation.start({ opacity: 1, scaleY: 1, transition: { duration: 0.2 } });
         apparitionHeaderAnimation.start({ opacity: 1, y: 0, transition: { delay: 0.2 } });
         apparitionBodyAnimation.start({ y: 0, opacity: 1, transition: { delay: 0.2 } });
         apparitionFooterAnimation.start({ y: 0, opacity: 1, scale: 1, transition: { delay: 0.2, ease: "linear" } });
