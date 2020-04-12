@@ -152,6 +152,7 @@ interface IChatBodyInformation {
     option: IOption
 }
 ```
+You can then use the received information to send it to EMAILJS, your backend, ... any solution in which you want to track the information given by your website visitors.
 
 ## License
 
