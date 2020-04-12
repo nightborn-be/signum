@@ -141,6 +141,18 @@ const App = () => {
 export default App;
 ```
 
+## Result
+
+In the handleSendClicked function you'll receive following structure 
+```jsx
+interface IChatBodyInformation {
+    email: string,
+    message: string,
+    steps: IOption[],
+    option: IOption
+}
+```
+
 ## License
 
 MIT © [m-Nightly](https://github.com/m-Nightly)
