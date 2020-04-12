@@ -11,8 +11,8 @@
 ## Install
 
 ```bash
-npm install --save signum
-yarn add signum
+npm install --save @nightborn/signum
+yarn add @nightborn/signum
 ```
 
 ## Configuration
