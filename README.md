@@ -1,8 +1,12 @@
 # signum
-
+![Banner](https://github.com/nightborn-be/signum/blob/master/lab_signum.png)
 > A lead generation communication tool
 
 [![NPM](https://img.shields.io/npm/v/signum.svg)](https://www.npmjs.com/package/signum) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
+
+## Demo
+
+You can try the communication tool here: https://nightborn-be.github.io/signum
 
 ## Install
 
@@ -11,9 +15,14 @@ npm install --save signum
 yarn add signum
 ```
 
+## Configuration
+
+![Configurator](https://github.com/nightborn-be/signum/blob/master/lab_signum_configurator.png)
+For the configuration of the UI we created a little interface to generate a config.js file to customize the theme.
+
 ## Usage
 
-```tsx
+```jsx
 import React from 'react'
 import Chat from 'signum'
 import 'signum/dist/index.css';
@@ -50,6 +59,7 @@ const defaultProps = {
 		]
 	},
 	config: {
+		openByDefault: false,
 		avatarIcon: require('./assets/chat_avatar.png'),
 		mainColor: 'linear-gradient(90deg, #406321 0%, #283E15 100%)',
 		secondaryColor: 'linear-gradient(90deg, #406321 0%, #283E15 100%)',
