@@ -1,6 +1,5 @@
 # signum
 ![Banner](https://github.com/nightborn-be/signum/blob/master/lab_signum.png)
-> A lead generation communication tool
 
 [![NPM](https://img.shields.io/npm/v/signum.svg)](https://www.npmjs.com/package/signum) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
@@ -17,8 +16,13 @@ yarn add signum
 
 ## Configuration
 
+### Theme
 ![Configurator](https://github.com/nightborn-be/signum/blob/master/lab_signum_configurator.png)
 For the configuration of the UI we created a little interface to generate a config.js file to customize the theme.
+https://nightborn.be/lab/signum
+
+### Options
+
 
 ## Usage
 
