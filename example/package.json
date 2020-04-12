@@ -1,0 +1,25 @@
+{
+  "name": "signum-example",
+  "homepage": "https://m-Nightly.github.io/signum",
+  "version": "0.0.0",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "signum": "link:..",
+    "react": "link:../node_modules/react",
+    "react-dom": "^16.9.0",
+    "react-scripts": "^3.0.1"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ]
+}

@@ -1,0 +1,36 @@
+.chat-button {
+    width: 60px;
+    height: 60px;
+    border-radius: 32.5px;;
+    position: fixed;
+    z-index: 10000;
+    right: 30px;
+    bottom: 30px;
+    display: flex;
+    background-color: #2DDC9F;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    cursor: pointer;
+    scale: 1;
+}
+
+.chat-button-image {
+    margin-top: 2px;
+    margin-left: -1px;
+    width: 30px;
+    height: 30px;
+}
+
+.chat-button-image-close {
+    margin-top: 0px;
+    margin-left: -1px;
+    width: 23px;
+    height: 23px;
+}
+
+@media screen and (max-width: 550px) {
+    .chat-button {
+        display: none;
+    }
+}

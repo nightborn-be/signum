@@ -1,0 +1,52 @@
+{
+  "name": "@nightborn/signum",
+  "version": "1.0.0",
+  "description": "A lead-generating communication component",
+  "author": "Maxime Denuit",
+  "license": "MIT",
+  "private": false,
+  "repository": "nightborn-be/signum",
+  "main": "dist/index.js",
+  "module": "dist/index.es.js",
+  "jsnext:main": "dist/index.es.js",
+  "files": [
+    "dist"
+  ],
+  "engines": {
+    "node": ">=8",
+    "npm": ">=5"
+  },
+  "scripts": {
+    "build": "rollup -c",
+    "start": "rollup -c -w",
+    "prepare": "yarn run build",
+    "predeploy": "cd example && yarn install && yarn run build",
+    "deploy": "gh-pages -d example/build"
+  },
+  "dependencies": {
+    "@babel/preset-react": "^7.9.4",
+    "@rollup/plugin-image": "^2.0.4",
+    "@rollup/plugin-typescript": "^4.0.0",
+    "@wessberg/rollup-plugin-ts": "^1.2.24",
+    "framer-motion": "^1.10.3",
+    "rollup": "^2.4.0",
+    "rollup-plugin-babel": "^4.4.0",
+    "rollup-plugin-scss": "^2.1.0"
+  },
+  "peerDependencies": {
+    "react": "^16.9.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.2.2",
+    "@babel/runtime": "^7.3.1",
+    "@testing-library/react-hooks": "^3.2.1",
+    "@types/jest": "^23.3.13",
+    "@types/react": "^16.7.22",
+    "cross-env": "^5.2.0",
+    "gh-pages": "^2.0.1",
+    "react": "^16.9.0",
+    "react-scripts": "^3.4.0",
+    "react-test-renderer": "^16.9.0",
+    "typescript": "^3.2.4"
+  }
+}
