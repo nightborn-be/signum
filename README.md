@@ -45,35 +45,37 @@ option: {
 	name: 'Hello there',
 	options: [
 		{
-				title: 'Hello there !',
-				message: 'You chose option A?',
-				name: 'Option A',
-				options: [
-					{
-						title: 'Hello there !',
-						message: 'You chose option AA?',
-						name: 'Option AA',
-					},
-					{
-						title: 'Hello there !',
-						message: 'You chose option AB?',
-						name: 'Option AB',
-					}
-				]
-			},
-			{
-				title: 'Hello there !',
-				message: 'You chose option B?',
-				name: 'Option B',
-			}
+            title: 'Hello there !',
+            message: 'You chose option A?',
+            name: 'Option A',
+            options: [
+                {
+                    title: 'Hello there !',
+                    message: 'You chose option AA?',
+                    name: 'Option AA',
+                },
+                {
+                    title: 'Hello there !',
+                    message: 'You chose option AB?',
+                    name: 'Option AB',
+                }
+            ]
+        },
+        {
+            title: 'Hello there !',
+            message: 'You chose option B?',
+            name: 'Option B',
+        }
 	]
 }
 ```
 
+
 ### Important information
 
-#### In order for the back-button to appear, you should leave blanc the subTitle attribute of the object.
-#### If you're at a leaf of your option-tree, please leave empty the options attribute and the messaging part of Signum will appear
+1. In order for the back-button to appear, you should leave blanc the subTitle attribute of the object.
+2. If you're at a leaf of your option-tree, please leave empty the options attribute and the messaging body of Signum will appear.
+
 
 ## Usage
 
