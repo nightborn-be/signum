@@ -6,6 +6,7 @@
 ## Demo
 
 You can try the communication tool here: https://nightborn-be.github.io/signum
+Or on our website for a production-version: https://nightborn.be
 
 ## Install
 
@@ -22,7 +23,57 @@ For the configuration of the UI we created a little interface to generate a conf
 https://nightborn.be/lab/signum
 
 ### Options
+For the options it's a pretty straightforward structure.
 
+1. First create the container object:
+
+```jsx
+option: {
+	title: 'Hello there !',
+	subTitle: 'How can I help you?',
+	message: 'How can I help you?',
+	name: 'Hello there'
+}
+```
+
+2. Add the array of options (If you want options)
+```jsx
+option: {
+	title: 'Hello there !',
+	subTitle: 'How can I help you?',
+	message: 'How can I help you?',
+	name: 'Hello there',
+	options: [
+		{
+				title: 'Hello there !',
+				message: 'You chose option A?',
+				name: 'Option A',
+				options: [
+					{
+						title: 'Hello there !',
+						message: 'You chose option AA?',
+						name: 'Option AA',
+					},
+					{
+						title: 'Hello there !',
+						message: 'You chose option AB?',
+						name: 'Option AB',
+					}
+				]
+			},
+			{
+				title: 'Hello there !',
+				message: 'You chose option B?',
+				name: 'Option B',
+			}
+	]
+}
+```
+
+### Important information
+
+#### In order for the back-button to appear, you should leave blanc the subTitle attribute of the object.
+#### If you're at a leaf of your option-tree, please leave empty the options attribute and the messaging part of Signum will appear
 
 ## Usage
 
