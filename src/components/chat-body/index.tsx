@@ -98,12 +98,19 @@ export default function ChatBody() {
      * Resets the entire state of the chat
      */
     function reset() {
+        closeChat();
         setOption(defaultOption);
         setSteps([]);
         setIsDone(false);
         setEmail('');
         setMessage('');
-        closeChat();
+    }
+
+    if (!isOpen) {
+        return (
+            <>
+            </>
+        )
     }
 
     // Render
@@ -131,8 +138,15 @@ export default function ChatBody() {
                         option.subTitle ?
                             (
                                 <div>
-                                    <div className="chat-body-header-title">
-                                        {option.title}
+                                    <div className="chat-body-header-title-container">
+                                        <div className="chat-body-header-title">
+                                            {option.title}
+                                        </div>
+                                        <div onClick={closeChat} className="chat-body-header-title-close-button">
+                                            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M1.04261 2.45673L5.58588 7L1.04261 11.5433C0.652462 11.9334 0.652463 12.5672 1.04261 12.9574C1.43276 13.3475 2.06658 13.3475 2.45673 12.9574L7 8.41412L11.5433 12.9574C11.9334 13.3475 12.5672 13.3475 12.9574 12.9574C13.3475 12.5672 13.3475 11.9334 12.9574 11.5433L8.41412 7L12.9574 2.45673C13.3475 2.06658 13.3475 1.43276 12.9574 1.04261C12.5672 0.652463 11.9334 0.652462 11.5433 1.04261L7 5.58588L2.45673 1.04261C2.06658 0.652463 1.43276 0.652463 1.04261 1.04261C0.652463 1.43276 0.652463 2.06658 1.04261 2.45673Z" fill="white" stroke="white" stroke-width="0.5" />
+                                            </svg>
+                                        </div>
                                     </div>
                                     <div className="chat-body-header-body">
                                         {option.subTitle}
@@ -142,13 +156,20 @@ export default function ChatBody() {
                             :
                             (
                                 <div className="chat-body-header-small">
-                                    <motion.div whileHover={{ x: -2 }} whileTap={{ scale: 0.9 }} onClick={handleBackClicked} className="chat-body-header-small-image">
-                                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M4.76036 10.388C4.76712 10.3955 4.77411 10.4028 4.78133 10.4101L9.88097 15.5188C10.0316 15.6697 10.0314 15.914 9.88049 16.0646C9.72963 16.2152 9.48525 16.215 9.33465 16.0641L4.23503 10.9554C4.0031 10.7231 3.87334 10.4275 3.84573 10.1242C3.83291 10.0858 3.82597 10.0447 3.82597 10.002C3.82597 9.95954 3.83282 9.91869 3.84548 9.88048C3.8726 9.57589 4.00275 9.27875 4.23591 9.04566L9.34254 3.93958C9.49327 3.78886 9.73765 3.78887 9.88837 3.93961C10.0391 4.09035 10.0391 4.33473 9.88834 4.48545L4.78169 9.59155C4.7737 9.59954 4.766 9.6077 4.75857 9.61602L17.3347 9.61602C17.5479 9.61602 17.7207 9.78883 17.7207 10.002C17.7207 10.2152 17.5479 10.388 17.3347 10.388L4.76036 10.388Z" fill="white" stroke="white" />
+                                    <div className="chat-body-header-small-left">
+                                        <motion.div whileHover={{ x: -2 }} whileTap={{ scale: 0.9 }} onClick={handleBackClicked} className="chat-body-header-small-image">
+                                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M4.76036 10.388C4.76712 10.3955 4.77411 10.4028 4.78133 10.4101L9.88097 15.5188C10.0316 15.6697 10.0314 15.914 9.88049 16.0646C9.72963 16.2152 9.48525 16.215 9.33465 16.0641L4.23503 10.9554C4.0031 10.7231 3.87334 10.4275 3.84573 10.1242C3.83291 10.0858 3.82597 10.0447 3.82597 10.002C3.82597 9.95954 3.83282 9.91869 3.84548 9.88048C3.8726 9.57589 4.00275 9.27875 4.23591 9.04566L9.34254 3.93958C9.49327 3.78886 9.73765 3.78887 9.88837 3.93961C10.0391 4.09035 10.0391 4.33473 9.88834 4.48545L4.78169 9.59155C4.7737 9.59954 4.766 9.6077 4.75857 9.61602L17.3347 9.61602C17.5479 9.61602 17.7207 9.78883 17.7207 10.002C17.7207 10.2152 17.5479 10.388 17.3347 10.388L4.76036 10.388Z" fill="white" stroke="white" />
+                                            </svg>
+                                        </motion.div>
+                                        <div className="chat-body-header-small-title">
+                                            {option.title}
+                                        </div>
+                                    </div>
+                                    <div onClick={reset} className="chat-body-header-title-close-button">
+                                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M1.04261 2.45673L5.58588 7L1.04261 11.5433C0.652462 11.9334 0.652463 12.5672 1.04261 12.9574C1.43276 13.3475 2.06658 13.3475 2.45673 12.9574L7 8.41412L11.5433 12.9574C11.9334 13.3475 12.5672 13.3475 12.9574 12.9574C13.3475 12.5672 13.3475 11.9334 12.9574 11.5433L8.41412 7L12.9574 2.45673C13.3475 2.06658 13.3475 1.43276 12.9574 1.04261C12.5672 0.652463 11.9334 0.652462 11.5433 1.04261L7 5.58588L2.45673 1.04261C2.06658 0.652463 1.43276 0.652463 1.04261 1.04261C0.652463 1.43276 0.652463 2.06658 1.04261 2.45673Z" fill="white" stroke="white" stroke-width="0.5" />
                                         </svg>
-                                    </motion.div>
-                                    <div className="chat-body-header-small-title">
-                                        {option.title}
                                     </div>
                                 </div>
                             )

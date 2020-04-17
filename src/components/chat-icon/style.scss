@@ -29,8 +29,40 @@
     height: 23px;
 }
 
+.chat-button-active {
+    width: 60px;
+    height: 60px;
+    border-radius: 32.5px;;
+    position: fixed;
+    z-index: 10000;
+    right: 30px;
+    bottom: 30px;
+    display: flex;
+    background-color: #2DDC9F;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    cursor: pointer;
+    scale: 1;
+    display: flex;
+}
+
 @media screen and (max-width: 550px) {
-    .chat-button {
+    .chat-button-active {
+        width: 60px;
+        height: 60px;
+        border-radius: 32.5px;;
+        position: fixed;
+        z-index: 10000;
+        right: 30px;
+        bottom: 30px;
+        display: flex;
+        background-color: #2DDC9F;
+        align-items: center;
+        align-content: center;
+        justify-content: center;
+        cursor: pointer;
+        scale: 1;
         display: none;
     }
 }

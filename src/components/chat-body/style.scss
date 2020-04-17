@@ -37,11 +37,29 @@
 .chat-body-header-title {
     font-weight: 600;
     font-size: 24.6154px;
-    line-height: 37px;
     color: #FFFFFF;
 }
 
+.chat-body-header-title-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.chat-body-header-title-close-button {
+    display: none;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+
 .chat-body-header-small {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.chat-body-header-small-left {
     display: flex;
     flex-direction: row;
 }
@@ -241,6 +259,41 @@
 
 @media screen and (max-width: 550px) {
     .chat-body-container {
-        display: none;
+        height: 100%;
+        width: 100%;
+        max-height: 100%;
+        position: fixed;
+        z-index: 10000;
+        right: 0px;
+        bottom: 0px;
+        background-color: #F8F9FC;
+        border-radius: 0px;
+        overflow: auto;
+        display: flex;
+        flex-direction: column;
+        box-shadow: 0px 26px 41px rgba(0, 0, 0, 0.15);
+    }
+    
+    .chat-body-small-container {
+        height: 100%;
+        width: 100%;
+        max-height: 100%;
+        position: fixed;
+        z-index: 10000;
+        right: 0px;
+        bottom: 0px;
+        background-color: #F8F9FC;
+        border-radius: 0px;
+        overflow: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        box-shadow: 0px 26px 41px rgba(0, 0, 0, 0.15);
+    }    
+
+    .chat-body-header-title-close-button {
+        display: inherit;
+        margin-top: auto;
+        margin-bottom: auto;
     }
 }

@@ -27,7 +27,7 @@ export default function ChatIcon() {
 
     // Render
     return (
-        <motion.div initial={{ y: 100 }} animate={{ y: 0, transition: { delay: 1.5 } }} onClick={() => isOpen ? closeChat() : openChat()} whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }} className="chat-button" style={{ background: config.secondaryColor }}>
+        <motion.div initial={{ y: 100 }} animate={{ y: 0, transition: { delay: 1.5 } }} onClick={() => isOpen ? closeChat() : openChat()} whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }} className={`chat-button${isOpen ? "-active" : ""}`} style={{ background: config.secondaryColor }}>
             <img src={getImage()} className={getImageClass()} />
         </motion.div>
     )
