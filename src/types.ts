@@ -1,7 +1,9 @@
+import { ReactNode } from "react";
+
 export interface IOption {
     title: string,
     subTitle?: string,
-    message: string,
+    message: ReactNode,
     name: string,
     handleOnClick?: Function,
     options?: IOption[]
