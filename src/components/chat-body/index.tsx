@@ -186,7 +186,7 @@ export default function ChatBody() {
 
                 <div className="chat-body-content-options">
                     {option.options && option.options.map((option) => (
-                        <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }} onClick={() => handleOptionClicked(option)} className="chat-body-content-option" style={{ background: config.mainColor }}>
+                        <motion.div key={option.name} whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }} onClick={() => handleOptionClicked(option)} className="chat-body-content-option" style={{ background: config.mainColor }}>
                             {option.name}
                         </motion.div>
                     ))}
