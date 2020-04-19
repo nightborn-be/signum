@@ -1,4 +1,18 @@
-import { IChatBodyInformation } from "../components/chat-body/interfaces/IChatBodyInformation";
+export interface IOption {
+    title: string,
+    subTitle?: string,
+    message: string,
+    name: string,
+    handleOnClick?: Function,
+    options?: IOption[]
+}
+
+export interface IChatBodyInformation {
+    email: string,
+    message: string,
+    steps: IOption[],
+    option: IOption
+}
 
 export interface IChatConfig {
     openByDefault: boolean,

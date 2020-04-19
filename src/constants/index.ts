@@ -1,5 +1,4 @@
-import { IOption } from "../interfaces/IOption"
-import { IChatConfig } from "../interfaces/IChatConfig"
+import { IChatConfig, IOption } from "../types"
 
 export const defaultConfig: IChatConfig = {
     openByDefault: false,

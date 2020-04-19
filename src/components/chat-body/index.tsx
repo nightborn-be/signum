@@ -1,8 +1,8 @@
 import './style.scss';
 import React, { useState, useEffect } from 'react';
-import { IOption } from '../../interfaces/IOption';
 import { motion, useAnimation } from 'framer-motion';
 import { useChat } from '../chat-context/ChatContext';
+import { IOption } from '../../types';
 
 export default function ChatBody() {
 
