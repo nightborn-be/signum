@@ -1,4 +1,20 @@
-import { IChatBodyInformation } from "../components/chat-body/interfaces/IChatBodyInformation";
+import { ReactNode } from "react";
+
+export interface IOption {
+    title: string,
+    subTitle?: string,
+    message: ReactNode,
+    name: string,
+    handleOnClick?: Function,
+    options?: IOption[]
+}
+
+export interface IChatBodyInformation {
+    email: string,
+    message: string,
+    steps: IOption[],
+    option: IOption
+}
 
 export interface IChatConfig {
     openByDefault: boolean,

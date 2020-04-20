@@ -1,8 +1,8 @@
 import './style.scss';
 import React, { useState, useEffect } from 'react';
-import { IOption } from '../../interfaces/IOption';
 import { motion, useAnimation } from 'framer-motion';
 import { useChat } from '../chat-context/ChatContext';
+import { IOption } from '../../types';
 
 export default function ChatBody() {
 
@@ -144,7 +144,7 @@ export default function ChatBody() {
                                         </div>
                                         <div onClick={closeChat} className="chat-body-header-title-close-button">
                                             <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                <path d="M1.04261 2.45673L5.58588 7L1.04261 11.5433C0.652462 11.9334 0.652463 12.5672 1.04261 12.9574C1.43276 13.3475 2.06658 13.3475 2.45673 12.9574L7 8.41412L11.5433 12.9574C11.9334 13.3475 12.5672 13.3475 12.9574 12.9574C13.3475 12.5672 13.3475 11.9334 12.9574 11.5433L8.41412 7L12.9574 2.45673C13.3475 2.06658 13.3475 1.43276 12.9574 1.04261C12.5672 0.652463 11.9334 0.652462 11.5433 1.04261L7 5.58588L2.45673 1.04261C2.06658 0.652463 1.43276 0.652463 1.04261 1.04261C0.652463 1.43276 0.652463 2.06658 1.04261 2.45673Z" fill="white" stroke="white" stroke-width="0.5" />
+                                                <path d="M1.04261 2.45673L5.58588 7L1.04261 11.5433C0.652462 11.9334 0.652463 12.5672 1.04261 12.9574C1.43276 13.3475 2.06658 13.3475 2.45673 12.9574L7 8.41412L11.5433 12.9574C11.9334 13.3475 12.5672 13.3475 12.9574 12.9574C13.3475 12.5672 13.3475 11.9334 12.9574 11.5433L8.41412 7L12.9574 2.45673C13.3475 2.06658 13.3475 1.43276 12.9574 1.04261C12.5672 0.652463 11.9334 0.652462 11.5433 1.04261L7 5.58588L2.45673 1.04261C2.06658 0.652463 1.43276 0.652463 1.04261 1.04261C0.652463 1.43276 0.652463 2.06658 1.04261 2.45673Z" fill="white" stroke="white" strokeWidth="0.5" />
                                             </svg>
                                         </div>
                                     </div>
@@ -168,7 +168,7 @@ export default function ChatBody() {
                                     </div>
                                     <div onClick={reset} className="chat-body-header-title-close-button">
                                         <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M1.04261 2.45673L5.58588 7L1.04261 11.5433C0.652462 11.9334 0.652463 12.5672 1.04261 12.9574C1.43276 13.3475 2.06658 13.3475 2.45673 12.9574L7 8.41412L11.5433 12.9574C11.9334 13.3475 12.5672 13.3475 12.9574 12.9574C13.3475 12.5672 13.3475 11.9334 12.9574 11.5433L8.41412 7L12.9574 2.45673C13.3475 2.06658 13.3475 1.43276 12.9574 1.04261C12.5672 0.652463 11.9334 0.652462 11.5433 1.04261L7 5.58588L2.45673 1.04261C2.06658 0.652463 1.43276 0.652463 1.04261 1.04261C0.652463 1.43276 0.652463 2.06658 1.04261 2.45673Z" fill="white" stroke="white" stroke-width="0.5" />
+                                            <path d="M1.04261 2.45673L5.58588 7L1.04261 11.5433C0.652462 11.9334 0.652463 12.5672 1.04261 12.9574C1.43276 13.3475 2.06658 13.3475 2.45673 12.9574L7 8.41412L11.5433 12.9574C11.9334 13.3475 12.5672 13.3475 12.9574 12.9574C13.3475 12.5672 13.3475 11.9334 12.9574 11.5433L8.41412 7L12.9574 2.45673C13.3475 2.06658 13.3475 1.43276 12.9574 1.04261C12.5672 0.652463 11.9334 0.652462 11.5433 1.04261L7 5.58588L2.45673 1.04261C2.06658 0.652463 1.43276 0.652463 1.04261 1.04261C0.652463 1.43276 0.652463 2.06658 1.04261 2.45673Z" fill="white" stroke="white" strokeWidth="0.5" />
                                         </svg>
                                     </div>
                                 </div>
@@ -186,7 +186,7 @@ export default function ChatBody() {
 
                 <div className="chat-body-content-options">
                     {option.options && option.options.map((option) => (
-                        <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }} onClick={() => handleOptionClicked(option)} className="chat-body-content-option" style={{ background: config.mainColor }}>
+                        <motion.div key={option.name} whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }} onClick={() => handleOptionClicked(option)} className="chat-body-content-option" style={{ background: config.mainColor }}>
                             {option.name}
                         </motion.div>
                     ))}

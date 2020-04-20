@@ -1,6 +1,14 @@
 import { createContext, useContext } from "react";
-import { IChatContext } from "./interfaces/IChatContext";
 import { defaultConfig, defaultOption } from "../../constants";
+import { IChatConfig, IOption } from "../../types";
+
+interface IChatContext {
+    isOpen: boolean,
+    config: IChatConfig,
+    openChat: () => void,
+    closeChat: () => void,
+    defaultOption: IOption
+}
 
 const ChatContext = createContext<IChatContext>({
     isOpen: false,

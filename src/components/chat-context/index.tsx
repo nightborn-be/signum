@@ -1,7 +1,13 @@
 import React, { useState } from "react";
 import { ChatContext } from "./ChatContext";
-import { IChatProviderProps } from "./interfaces/IChatProviderProps";
 import { defaultConfig, defaultOption } from "../../constants";
+import { IOption, IChatConfig } from '../../types';
+
+export interface IChatProviderProps {
+    option: IOption,
+    config: IChatConfig,
+    children: any
+}
 
 export default function ChatContextProvider(props: IChatProviderProps) {
 
