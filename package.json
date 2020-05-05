@@ -30,6 +30,7 @@
     "@rollup/plugin-typescript": "^4.0.0",
     "@wessberg/rollup-plugin-ts": "^1.2.24",
     "framer-motion": "^1.10.3",
+    "react-hook-form": "^5.6.1",
     "rollup": "^2.4.0",
     "rollup-plugin-babel": "^4.4.0",
     "rollup-plugin-scss": "^2.1.0"

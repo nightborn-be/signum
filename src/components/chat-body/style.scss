@@ -1,3 +1,17 @@
+.chat-body-messenger-error {
+    color: #9f3a38;
+    font-size: 11px;
+    padding: 2px 0;
+}
+
+
+.chat-body-messenger-body .chat-body-messenger-input-error {
+    background-color: #fff6f6;
+    border-color: #e0b4b4;
+    color: #9f3a38;
+}
+
+
 .chat-body-container {
     height: calc(100% - 200px);
     max-height: 600px;
