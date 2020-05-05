@@ -1,22 +1,21 @@
 import './style.scss';
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { motion, useAnimation } from 'framer-motion';
 import { useChat } from '../chat-context/ChatContext';
 import { IOption } from '../../types';
+import { useForm, ErrorMessage } from "react-hook-form";
 
 export default function ChatBody() {
 
     // Attributes
     const { isOpen, closeChat, config, defaultOption } = useChat();
-
+    const { register, handleSubmit, errors, reset:resetForm, watch } = useForm();
     const apparitionAnimation = useAnimation();
     const apparitionHeaderAnimation = useAnimation();
     const apparitionBodyAnimation = useAnimation();
     const apparitionFooterAnimation = useAnimation();
     const [option, setOption] = useState<IOption>(defaultOption);
     const [steps, setSteps] = useState<IOption[]>([]);
-    const [email, setEmail] = useState('');
-    const [message, setMessage] = useState('');
     const [isDone, setIsDone] = useState(false);
 
     // Effects
@@ -51,8 +50,7 @@ export default function ChatBody() {
 
     function handleBackClicked() {
         // Resets the current values
-        setMessage('');
-        setEmail('');
+        resetForm()
 
         // Sets the current option to the previous one
         if (steps.length >= 2) {
@@ -69,12 +67,13 @@ export default function ChatBody() {
         });
     }
 
-    async function handleSendClicked() {
-        if (isFormFilledIn()) {
+    const handleSendClicked = useCallback(handleSubmit(
+        async ({message, email})=>{
             await config.handleSendClicked({ email, message, steps, option });
             setIsDone(true);
         }
-    }
+    ), [setIsDone, config.handleSendClicked, steps, option])
+
 
     async function handleFinishClicked() {
         await outSequence();
@@ -88,10 +87,8 @@ export default function ChatBody() {
      * Returns if the message and e-mail are filled in
      */
     function isFormFilledIn() {
-        if (message && email) {
-            return true
-        }
-        return false;
+
+        return !errors.email && !errors.message && watch('email') && watch('message')
     }
 
     /**
@@ -102,8 +99,7 @@ export default function ChatBody() {
         setOption(defaultOption);
         setSteps([]);
         setIsDone(false);
-        setEmail('');
-        setMessage('');
+        resetForm()
     }
 
     if (!isOpen) {
@@ -129,7 +125,6 @@ export default function ChatBody() {
             </motion.div>
         );
     }
-
     return (
         <motion.div initial={{ scaleY: 0, opacity: 0, x: 500 }} animate={apparitionAnimation} className="chat-body-container">
             <div className="chat-body-header" style={{ background: config.mainColor }}>
@@ -198,8 +193,39 @@ export default function ChatBody() {
                     (
                         <motion.div animate={apparitionFooterAnimation} className="chat-body-messenger">
                             <div className="chat-body-messenger-body">
-                                <input autoFocus value={email} onChange={(event) => setEmail(event.target.value)} placeholder={config.emailPlaceholder} />
-                                <textarea value={message} onChange={(event) => setMessage(event.target.value)} placeholder={config.messagePlaceholder} />
+                                <input 
+                                    autoFocus 
+                                    name='email'
+                                    className={errors.email? 'chat-body-messenger-input-error':undefined}
+                                    placeholder={config.emailPlaceholder} 
+                                    ref={register({
+                                        required: 'Please enter your email.',
+                                        pattern: {
+                                            value:/[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/gi,
+                                            message: 'This email is invalid'
+                                        }
+                                    })} 
+                                />
+                                <ErrorMessage 
+                                    as='div' 
+                                    errors={errors} 
+                                    name="email" 
+                                    className='chat-body-messenger-error'
+                                />
+                                <textarea 
+                                    name='message' 
+                                    placeholder={config.messagePlaceholder} 
+                                    className={errors.message? 'chat-body-messenger-input-error':undefined}
+                                    ref={register({
+                                        required: 'Please enter a message.',
+                                    })} 
+                                />
+                                <ErrorMessage 
+                                    as='div' 
+                                    errors={errors} 
+                                    name="message" 
+                                    className='chat-body-messenger-error'
+                                />
                             </div>
                             <div className="chat-body-messenger-footer">
                                 <motion.div whileHover={{ x: isFormFilledIn() ? 2 : 0 }} whileTap={{ scale: 0.9 }} onClick={handleSendClicked} className="chat-body-messenger-footer-image" style={{ cursor: isFormFilledIn() ? 'pointer' : 'not-allowed' }}>
