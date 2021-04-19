@@ -7835,7 +7835,6 @@ react-scripts@^3.0.1:
 
 "react@link:../node_modules/react":
   version "0.0.0"
-  uid ""
 
 read-pkg-up@^1.0.1:
   version "1.0.1"
@@ -8498,8 +8497,16 @@ signal-exit@^3.0.0, signal-exit@^3.0.2:
   resolved "https://registry.yarnpkg.com/signal-exit/-/signal-exit-3.0.3.tgz#a1410c2edd8f077b08b4e253c8eacfcaf057461c"
 
 "signum@link:..":
-  version "0.0.0"
-  uid ""
+  version "1.0.6"
+  dependencies:
+    "@babel/preset-react" "^7.9.4"
+    "@rollup/plugin-image" "^2.0.4"
+    "@rollup/plugin-typescript" "^4.0.0"
+    "@wessberg/rollup-plugin-ts" "^1.2.24"
+    framer-motion "^1.10.3"
+    rollup "^2.4.0"
+    rollup-plugin-babel "^4.4.0"
+    rollup-plugin-scss "^2.1.0"
 
 simple-swizzle@^0.2.2:
   version "0.2.2"
@@ -8693,8 +8700,8 @@ sshpk@^1.7.0:
     tweetnacl "~0.14.0"
 
 ssri@^6.0.1:
-  version "6.0.1"
-  resolved "https://registry.yarnpkg.com/ssri/-/ssri-6.0.1.tgz#2a3c41b28dd45b62b63676ecb74001265ae9edd8"
+  version "6.0.2"
+  resolved "https://registry.yarnpkg.com/ssri/-/ssri-6.0.2.tgz#157939134f20464e7301ddba3e90ffa8f7728ac5"
   dependencies:
     figgy-pudding "^3.5.1"
 
