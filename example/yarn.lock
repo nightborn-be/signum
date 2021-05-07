@@ -7835,7 +7835,6 @@ react-scripts@^3.0.1:
 
 "react@link:../node_modules/react":
   version "0.0.0"
-  uid ""
 
 read-pkg-up@^1.0.1:
   version "1.0.1"
@@ -8498,8 +8497,16 @@ signal-exit@^3.0.0, signal-exit@^3.0.2:
   resolved "https://registry.yarnpkg.com/signal-exit/-/signal-exit-3.0.3.tgz#a1410c2edd8f077b08b4e253c8eacfcaf057461c"
 
 "signum@link:..":
-  version "0.0.0"
-  uid ""
+  version "1.0.6"
+  dependencies:
+    "@babel/preset-react" "^7.9.4"
+    "@rollup/plugin-image" "^2.0.4"
+    "@rollup/plugin-typescript" "^4.0.0"
+    "@wessberg/rollup-plugin-ts" "^1.2.24"
+    framer-motion "^1.10.3"
+    rollup "^2.4.0"
+    rollup-plugin-babel "^4.4.0"
+    rollup-plugin-scss "^2.1.0"
 
 simple-swizzle@^0.2.2:
   version "0.2.2"
@@ -9245,8 +9252,8 @@ typedarray@^0.0.6:
   resolved "https://registry.yarnpkg.com/typedarray/-/typedarray-0.0.6.tgz#867ac74e3864187b1d3d47d996a78ec5c8830777"
 
 ua-parser-js@^0.7.21:
-  version "0.7.21"
-  resolved "https://registry.yarnpkg.com/ua-parser-js/-/ua-parser-js-0.7.21.tgz#853cf9ce93f642f67174273cc34565ae6f308777"
+  version "0.7.28"
+  resolved "https://registry.yarnpkg.com/ua-parser-js/-/ua-parser-js-0.7.28.tgz#8ba04e653f35ce210239c64661685bf9121dec31"
 
 unicode-canonical-property-names-ecmascript@^1.0.4:
   version "1.0.4"
