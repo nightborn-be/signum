@@ -6789,8 +6789,8 @@ path-key@^3.1.0:
   resolved "https://registry.yarnpkg.com/path-key/-/path-key-3.1.1.tgz#581f6ade658cbba65a0d3380de7753295054f375"
 
 path-parse@^1.0.6:
-  version "1.0.6"
-  resolved "https://registry.yarnpkg.com/path-parse/-/path-parse-1.0.6.tgz#d62dbb5679405d72c4737ec58600e9ddcf06d24c"
+  version "1.0.7"
+  resolved "https://registry.yarnpkg.com/path-parse/-/path-parse-1.0.7.tgz#fbc114b60ca42b30d9daf5858e4bd68bbedb6735"
 
 path-to-regexp@0.1.7:
   version "0.1.7"
@@ -7835,7 +7835,6 @@ react-scripts@^3.0.1:
 
 "react@link:../node_modules/react":
   version "0.0.0"
-  uid ""
 
 read-pkg-up@^1.0.1:
   version "1.0.1"
@@ -8498,8 +8497,16 @@ signal-exit@^3.0.0, signal-exit@^3.0.2:
   resolved "https://registry.yarnpkg.com/signal-exit/-/signal-exit-3.0.3.tgz#a1410c2edd8f077b08b4e253c8eacfcaf057461c"
 
 "signum@link:..":
-  version "0.0.0"
-  uid ""
+  version "1.0.6"
+  dependencies:
+    "@babel/preset-react" "^7.9.4"
+    "@rollup/plugin-image" "^2.0.4"
+    "@rollup/plugin-typescript" "^4.0.0"
+    "@wessberg/rollup-plugin-ts" "^1.2.24"
+    framer-motion "^1.10.3"
+    rollup "^2.4.0"
+    rollup-plugin-babel "^4.4.0"
+    rollup-plugin-scss "^2.1.0"
 
 simple-swizzle@^0.2.2:
   version "0.2.2"
