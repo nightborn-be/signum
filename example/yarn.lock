@@ -3127,8 +3127,8 @@ decamelize@^1.1.1, decamelize@^1.1.2, decamelize@^1.2.0:
   resolved "https://registry.yarnpkg.com/decamelize/-/decamelize-1.2.0.tgz#f6534d15148269b20352e7bee26f501f9a191290"
 
 decode-uri-component@^0.2.0:
-  version "0.2.0"
-  resolved "https://registry.yarnpkg.com/decode-uri-component/-/decode-uri-component-0.2.0.tgz#eb3913333458775cb84cd1a1fae062106bb87545"
+  version "0.2.2"
+  resolved "https://registry.yarnpkg.com/decode-uri-component/-/decode-uri-component-0.2.2.tgz#e69dbe25d37941171dd540e024c444cd5188e1e9"
 
 deep-equal@^1.0.1:
   version "1.1.1"
@@ -7835,7 +7835,6 @@ react-scripts@^3.0.1:
 
 "react@link:../node_modules/react":
   version "0.0.0"
-  uid ""
 
 read-pkg-up@^1.0.1:
   version "1.0.1"
@@ -8498,8 +8497,16 @@ signal-exit@^3.0.0, signal-exit@^3.0.2:
   resolved "https://registry.yarnpkg.com/signal-exit/-/signal-exit-3.0.3.tgz#a1410c2edd8f077b08b4e253c8eacfcaf057461c"
 
 "signum@link:..":
-  version "0.0.0"
-  uid ""
+  version "1.0.6"
+  dependencies:
+    "@babel/preset-react" "^7.9.4"
+    "@rollup/plugin-image" "^2.0.4"
+    "@rollup/plugin-typescript" "^4.0.0"
+    "@wessberg/rollup-plugin-ts" "^1.2.24"
+    framer-motion "^1.10.3"
+    rollup "^2.4.0"
+    rollup-plugin-babel "^4.4.0"
+    rollup-plugin-scss "^2.1.0"
 
 simple-swizzle@^0.2.2:
   version "0.2.2"
